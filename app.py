@@ -6,9 +6,5 @@ load_dotenv()
 hf_token=os.getenv('hf_token')
 user_query=st.text_input("Enter your query here: ")
 client = Client("https://binqiangliu-llama2-txt-gen.hf.space/")
-result = client.predict(
-				user_query,	# str in 'prompt' Textbox component
-				api_name="/predict"
-)
-
+result = client.predict(user_query, api_name="/predict")
 st.write("AI Reponse: "+result)
