@@ -1,7 +1,7 @@
 from gradio_client import Client
 import streamlit as st
 
-query_input=st.text_input("Enter your query here: ")
+user_query=st.text_input("Enter your query here: ")
 
 client = Client("https://binqiangliu-llama2-txt-gen.hf.space/")
 result = client.predict(
