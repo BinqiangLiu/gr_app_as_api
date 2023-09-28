@@ -3,7 +3,7 @@ import streamlit as st
 import os
 import sys
 from dotenv import load_dotenv
-import path
+from pathlib import Path
 from streamlit.components.v1 import html
 load_dotenv()
 
