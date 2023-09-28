@@ -17,10 +17,12 @@ with open(css_file) as f:
 hf_token=os.getenv('hf_token')
 
 user_query=st.text_input("Enter your query here: ")
+
 client = Client("https://binqiangliu-llama2-txt-gen.hf.space/")
 if user_query !="" and not user_query.strip().isspace() and not user_query == "" and not user_query.strip() == "" and not user_query.isspace():
-  result = client.predict(user_query, api_name="/predict")
-  st.write("AI Reponse: "+result)
+    with st.spinner("AI Thinking...Please wait a while to Cheers!"):
+        result = client.predict(user_query, api_name="/predict")
+        st.write("AI Reponse: "+result)
 else:
   st.write("Enter your query first.")
   st.stop()
